@@ -1,0 +1,20 @@
+{
+  "name": "testy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha *.test.js",
+    "test:watch": "mocha -w *.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "onchange": "^6.0.0"
+  },
+  "dependencies": {
+    "colors": "^1.3.3"
+  }
+}

@@ -1,0 +1,63 @@
+const assert = require('assert');
+const totalPoints = require('./calculateTotalPoints');
+const colors = require('colors');
+
+describe('Total Points'.yellow, () => {
+
+    describe('Hill normal'.blue, () => {
+
+        it('return a number (at positive add points).'.red, () => {
+            const actual = totalPoints(90, 'normal', 98, [17.5, 17, 18, 17.5, 17], 2.4, 9);
+
+            const expected = 107.4;
+
+            assert.equal(actual, expected);
+        });
+
+        it('return a number (at negative add points).'.red, () => {
+            const actual = totalPoints(105, 'normal', 98, [19, 19, 19, 19.5, 20], -16.5, -2);
+
+            const expected = 113;
+
+            assert.equal(actual, expected);
+        });
+    });
+
+    describe('Hill big'.blue, () => {
+
+        it('return a number (at positive add points).'.red, () => {
+            const actual = totalPoints(105.5, 'big', 120, [17, 18, 18, 17.5, 17.5], 12.8, 2);
+
+            const expected = 101.7;
+
+            assert.equal(actual, expected);
+        });
+
+        it('return a number (at negative add points).'.red, () => {
+            const actual = totalPoints(136, 'big', 120, [20, 19.5, 19.5, 20, 20], -14, -6);
+
+            const expected = 128.3;
+
+            assert.equal(actual, expected);
+        });
+    });
+
+    describe('Hill mammoth'.blue, () => {
+
+        it('return a number (at positive add points).'.red, () => {
+            const actual = totalPoints(182, 'mammoth', 200, [17, 17.5, 17, 17.5, 15], 26.1, 6);
+
+            const expected = 182;
+
+            assert.equal(actual, expected);
+        });
+
+        it('return a number (at negative add points).'.red, () => {
+            const actual = totalPoints(235.5, 'mammoth', 200, [19, 18.5, 18.5, 19.5, 18.5], -8, -1);
+
+            const expected = 209.6;
+
+            assert.equal(actual, expected);
+        });
+    });
+});
